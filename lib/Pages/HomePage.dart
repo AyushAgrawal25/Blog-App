@@ -1,4 +1,5 @@
 import 'package:blogapp/Blog/addBlog.dart';
+import 'package:blogapp/BusinessLogic/AuthProvider.dart';
 import 'package:blogapp/Pages/WelcomePage.dart';
 import 'package:blogapp/Screen/HomeScreen.dart';
 import 'package:blogapp/Profile/ProfileScreen.dart';
@@ -173,6 +174,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void logout() async {
+    AuthProvider().googleSignOut();
     await storage.delete(key: "token");
     Navigator.pushAndRemoveUntil(
         context,

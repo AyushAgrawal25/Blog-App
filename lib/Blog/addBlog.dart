@@ -5,6 +5,7 @@ import 'package:blogapp/Model/addBlogModels.dart';
 import 'package:blogapp/NetworkHandler.dart';
 import 'package:blogapp/Pages/HomePage.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 
 class AddBlog extends StatefulWidget {
@@ -18,6 +19,7 @@ class _AddBlogState extends State<AddBlog> {
   final _globalkey = GlobalKey<FormState>();
   TextEditingController _title = TextEditingController();
   TextEditingController _body = TextEditingController();
+  int _categoryId = 0;
   ImagePicker _picker = ImagePicker();
   PickedFile _imageFile;
   IconData iconphoto = Icons.image;
@@ -64,7 +66,11 @@ class _AddBlogState extends State<AddBlog> {
             titleTextField(),
             bodyTextField(),
             SizedBox(
-              height: 20,
+              height: 15,
+            ),
+            categoriesWidget(),
+            SizedBox(
+              height: 25,
             ),
             addButton(),
           ],
@@ -144,6 +150,57 @@ class _AddBlogState extends State<AddBlog> {
           labelText: "Provide Body Your Blog",
         ),
         maxLines: null,
+      ),
+    );
+  }
+
+  Widget categoriesWidget() {
+    // Add Validator to validate with this also.
+    List<String> categories = [
+      "Select Category",
+      "Coding",
+      "Politics",
+      "Development",
+      "Gaming",
+      "Bussiness",
+      "Internships"
+    ];
+    List<DropdownMenuItem> categoryOptions = [];
+
+    for (int i = 0; i < categories.length; i++) {
+      categoryOptions.add(DropdownMenuItem(
+        value: i,
+        child: Container(
+          width: MediaQuery.of(context).size.width - 60,
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          child: Text(
+            categories[i],
+            style: GoogleFonts.roboto(
+                fontSize: 14, fontWeight: FontWeight.w400, color: Colors.black),
+            textScaleFactor: 1.0,
+          ),
+        ),
+      ));
+    }
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      // decoration: BoxDecoration(
+      //     border: Border.all(
+      //   color: Colors.teal,
+      // )),
+      child: DropdownButton(
+        itemHeight: 75,
+        value: _categoryId,
+        items: categoryOptions,
+        onChanged: (value) {
+          if (value != null) {
+            setState(() {
+              _categoryId = value;
+            });
+          }
+
+          print(categories[_categoryId]);
+        },
       ),
     );
   }

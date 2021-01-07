@@ -1,5 +1,5 @@
 import 'package:blogapp/NetworkHandler.dart';
-import 'package:blogapp/Profile/CreatProfile.dart';
+import 'package:blogapp/Profile/CreateProfile.dart';
 import 'package:flutter/material.dart';
 
 import 'MainProfile.dart';
@@ -81,7 +81,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           InkWell(
             onTap: () => {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => CreatProfile()))
+                  MaterialPageRoute(builder: (context) => CreateProfile()))
             },
             child: Container(
               height: 60,

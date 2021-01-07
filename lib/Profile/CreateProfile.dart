@@ -6,14 +6,14 @@ import 'package:blogapp/Screen/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-class CreatProfile extends StatefulWidget {
-  CreatProfile({Key key}) : super(key: key);
+class CreateProfile extends StatefulWidget {
+  CreateProfile({Key key}) : super(key: key);
 
   @override
-  _CreatProfileState createState() => _CreatProfileState();
+  _CreateProfileState createState() => _CreateProfileState();
 }
 
-class _CreatProfileState extends State<CreatProfile> {
+class _CreateProfileState extends State<CreateProfile> {
   final networkHandler = NetworkHandler();
   bool circular = false;
   PickedFile _imageFile;
@@ -227,7 +227,7 @@ class _CreatProfileState extends State<CreatProfile> {
         ),
         labelText: "Name",
         helperText: "Name can't be empty",
-        hintText: "Dev Stack",
+        hintText: "Someone",
       ),
     );
   }
@@ -340,7 +340,7 @@ class _CreatProfileState extends State<CreatProfile> {
         )),
         labelText: "About",
         helperText: "Write about yourself",
-        hintText: "I am Dev Stack",
+        hintText: "I am someone",
       ),
     );
   }
