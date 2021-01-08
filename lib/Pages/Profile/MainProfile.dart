@@ -119,11 +119,15 @@ class _MainProfileState extends State<MainProfile> {
           Text(
             profileModel.username,
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            textScaleFactor: 1.0,
           ),
           SizedBox(
             height: 10,
           ),
-          Text(profileModel.titleline)
+          Text(
+            profileModel.titleline,
+            textScaleFactor: 1.0,
+          )
         ],
       ),
     );
@@ -141,6 +145,7 @@ class _MainProfileState extends State<MainProfile> {
               fontSize: 17,
               fontWeight: FontWeight.bold,
             ),
+            textScaleFactor: 1.0,
           ),
           SizedBox(
             height: 5,
@@ -148,6 +153,7 @@ class _MainProfileState extends State<MainProfile> {
           Text(
             value,
             style: TextStyle(fontSize: 15),
+            textScaleFactor: 1.0,
           )
         ],
       ),

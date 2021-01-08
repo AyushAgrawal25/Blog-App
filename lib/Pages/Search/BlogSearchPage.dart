@@ -160,7 +160,10 @@ class _BlogSearchPageState extends State<BlogSearchPage> {
                                   )
                                 : Container(
                                     alignment: Alignment.center,
-                                    child: Text("No Blogs Found."),
+                                    child: Text(
+                                      "No Blogs Found.",
+                                      textScaleFactor: 1.0,
+                                    ),
                                   )),
                   ),
                 )

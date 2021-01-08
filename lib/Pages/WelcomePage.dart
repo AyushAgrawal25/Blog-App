@@ -116,6 +116,7 @@ class _WelcomePageState extends State<WelcomePage>
                             fontWeight: FontWeight.w600,
                             letterSpacing: 2,
                           ),
+                          textScaleFactor: 1.0,
                         ),
                       ),
                       SizedBox(
@@ -131,6 +132,7 @@ class _WelcomePageState extends State<WelcomePage>
                             fontSize: 38,
                             letterSpacing: 2,
                           ),
+                          textScaleFactor: 1.0,
                         ),
                       ),
                       SizedBox(
@@ -235,8 +237,11 @@ class _WelcomePageState extends State<WelcomePage>
             ),
             (route) => false);
       } else {
-        Scaffold.of(context)
-            .showSnackBar(SnackBar(content: Text("Netwok Error")));
+        Scaffold.of(context).showSnackBar(SnackBar(
+            content: Text(
+          "Netwok Error",
+          textScaleFactor: 1.0,
+        )));
       }
     } else {
       // Loader End
@@ -280,6 +285,7 @@ class _WelcomePageState extends State<WelcomePage>
                       child: Text(
                         text,
                         style: TextStyle(fontSize: 16, color: Colors.black87),
+                        textScaleFactor: 1.0,
                       ),
                     ),
                   ),

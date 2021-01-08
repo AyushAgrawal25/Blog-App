@@ -23,7 +23,11 @@ class _LoadingPageState extends State<LoadingPage> {
             tileMode: TileMode.repeated,
           ),
         ),
-        child: Center(child: Text("Uped")),
+        child: Center(
+            child: Text(
+          "Uped",
+          textScaleFactor: 1.0,
+        )),
       ),
     );
   }

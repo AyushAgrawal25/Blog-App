@@ -41,6 +41,7 @@ class OverlayCard extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
                 ),
+                textScaleFactor: 1.0,
               ),
             ),
           )

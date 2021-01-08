@@ -41,7 +41,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: appPrimaryThemeColor,
-        title: Text("Your Profile"),
+        title: Text(
+          "Your Profile",
+          textScaleFactor: 1.0,
+        ),
         centerTitle: true,
         actions: <Widget>[
           IconButton(
@@ -58,7 +61,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget showProfile() {
-    return Center(child: Text("Profile Data is Avalable"));
+    return Center(
+        child: Text(
+      "Profile Data is Avalable",
+      textScaleFactor: 1.0,
+    ));
   }
 
   Widget button() {
@@ -75,6 +82,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               color: Colors.deepOrange,
               fontSize: 18,
             ),
+            textScaleFactor: 1.0,
           ),
           SizedBox(
             height: 30,
@@ -98,6 +106,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     color: Colors.white,
                     fontSize: 18,
                   ),
+                  textScaleFactor: 1.0,
                 ),
               ),
             ),

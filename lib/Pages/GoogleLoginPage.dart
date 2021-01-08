@@ -74,6 +74,7 @@ class _GoogleLoginPageState extends State<GoogleLoginPage> {
                                               letterSpacing: 1.0,
                                               fontWeight: FontWeight.w400,
                                               color: Colors.black),
+                                          textScaleFactor: 1.0,
                                         ),
                                       ),
                                       Container(
@@ -102,6 +103,7 @@ class _GoogleLoginPageState extends State<GoogleLoginPage> {
                                         fontSize: 22.5,
                                         fontWeight: FontWeight.w400,
                                         color: Colors.black),
+                                    textScaleFactor: 1.0,
                                   ),
                                 ),
 
@@ -151,6 +153,7 @@ class _GoogleLoginPageState extends State<GoogleLoginPage> {
                                                     fontSize: 20,
                                                     fontWeight: FontWeight.w600,
                                                     color: Colors.black87),
+                                                textScaleFactor: 1.0,
                                               ),
                                             ),
                                           ),

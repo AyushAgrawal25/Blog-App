@@ -79,7 +79,10 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 10,
                   ),
-                  Text("@$username"),
+                  Text(
+                    "@$username",
+                    textScaleFactor: 1.0,
+                  ),
                 ],
               ),
             ),
@@ -106,7 +109,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: ListTile(
-                title: Text("Logout"),
+                title: Text("Logout", textScaleFactor: 1.0),
                 trailing: Icon(Icons.power_settings_new),
                 onTap: logout,
               ),
@@ -116,7 +119,10 @@ class _HomePageState extends State<HomePage> {
       ),
       appBar: AppBar(
         backgroundColor: appPrimaryThemeColor,
-        title: Text("Uped"),
+        title: Text(
+          "Uped",
+          textScaleFactor: 1.0,
+        ),
         centerTitle: true,
         actions: <Widget>[
           IconButton(
@@ -142,6 +148,7 @@ class _HomePageState extends State<HomePage> {
         child: Text(
           "+",
           style: TextStyle(fontSize: 40),
+          textScaleFactor: 1.0,
         ),
       ),
       bottomNavigationBar: BottomAppBar(

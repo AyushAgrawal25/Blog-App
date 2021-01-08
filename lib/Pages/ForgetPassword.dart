@@ -54,6 +54,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     fontWeight: FontWeight.bold,
                     letterSpacing: 2,
                   ),
+                  textScaleFactor: 1.0,
                 ),
                 SizedBox(
                   height: 20,
@@ -108,6 +109,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                               ),
+                              textScaleFactor: 1.0,
                             ),
                     ),
                   ),
@@ -127,7 +129,10 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   Widget usernameTextField() {
     return Column(
       children: [
-        Text("Username"),
+        Text(
+          "Username",
+          textScaleFactor: 1.0,
+        ),
         TextFormField(
           controller: _usernameController,
           decoration: InputDecoration(
@@ -147,7 +152,10 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   Widget passwordTextField() {
     return Column(
       children: [
-        Text("Password"),
+        Text(
+          "Password",
+          textScaleFactor: 1.0,
+        ),
         TextFormField(
           controller: _passwordController,
           obscureText: vis,

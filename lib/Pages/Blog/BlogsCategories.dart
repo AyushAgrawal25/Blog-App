@@ -1,9 +1,19 @@
 List<String> blogCategories = [
-      "Select Category",
-      "Coding",
-      "Politics",
-      "Development",
-      "Gaming",
-      "Bussiness",
-      "Internships"
-    ];
+  "Select Category",
+  "Art & Craft",
+  "Business",
+  "Education",
+  "Fashion",
+  "Finance",
+  "Fitness",
+  "Food",
+  "Fun",
+  "Gaming",
+  "News",
+  "Parenting",
+  "Pet",
+  "Political",
+  "Sports",
+  "Technology",
+  "Other"
+];

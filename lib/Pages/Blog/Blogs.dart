@@ -66,7 +66,10 @@ class _BlogsState extends State<Blogs> {
                 .toList(),
           )
         : Center(
-            child: Text("We don't have any Blog Yet"),
+            child: Text(
+              "We don't have any Blog Yet",
+              textScaleFactor: 1.0,
+            ),
           );
   }
 }

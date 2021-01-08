@@ -113,6 +113,7 @@ class _CreateProfileState extends State<CreateProfile> {
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
+                            textScaleFactor: 1.0,
                           ),
                   ),
                 ),
@@ -169,6 +170,7 @@ class _CreateProfileState extends State<CreateProfile> {
             style: TextStyle(
               fontSize: 20.0,
             ),
+            textScaleFactor: 1.0,
           ),
           SizedBox(
             height: 20,
@@ -179,14 +181,20 @@ class _CreateProfileState extends State<CreateProfile> {
               onPressed: () {
                 takePhoto(ImageSource.camera);
               },
-              label: Text("Camera"),
+              label: Text(
+                "Camera",
+                textScaleFactor: 1.0,
+              ),
             ),
             FlatButton.icon(
               icon: Icon(Icons.image),
               onPressed: () {
                 takePhoto(ImageSource.gallery);
               },
-              label: Text("Gallery"),
+              label: Text(
+                "Gallery",
+                textScaleFactor: 1.0,
+              ),
             ),
           ])
         ],

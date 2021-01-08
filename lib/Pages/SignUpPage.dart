@@ -51,6 +51,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2,
                 ),
+                textScaleFactor: 1.0,
               ),
               SizedBox(
                 height: 20,
@@ -106,8 +107,11 @@ class _SignUpPageState extends State<SignUpPage> {
                             ),
                             (route) => false);
                       } else {
-                        Scaffold.of(context).showSnackBar(
-                            SnackBar(content: Text("Netwok Error")));
+                        Scaffold.of(context).showSnackBar(SnackBar(
+                            content: Text(
+                          "Netwok Error",
+                          textScaleFactor: 1.0,
+                        )));
                       }
                     }
 
@@ -180,7 +184,10 @@ class _SignUpPageState extends State<SignUpPage> {
       padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10.0),
       child: Column(
         children: [
-          Text("Username"),
+          Text(
+            "Username",
+            textScaleFactor: 1.0,
+          ),
           TextFormField(
             controller: _usernameController,
             decoration: InputDecoration(
@@ -203,7 +210,10 @@ class _SignUpPageState extends State<SignUpPage> {
       padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10.0),
       child: Column(
         children: [
-          Text("Email"),
+          Text(
+            "Email",
+            textScaleFactor: 1.0,
+          ),
           TextFormField(
             controller: _emailController,
             validator: (value) {
@@ -230,7 +240,10 @@ class _SignUpPageState extends State<SignUpPage> {
       padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10.0),
       child: Column(
         children: [
-          Text("Password"),
+          Text(
+            "Password",
+            textScaleFactor: 1.0,
+          ),
           TextFormField(
             controller: _passwordController,
             validator: (value) {

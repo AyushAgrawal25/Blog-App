@@ -75,6 +75,7 @@ class _AddBlogState extends State<AddBlog> {
                       child: Text(
                         "Preview",
                         style: TextStyle(fontSize: 18, color: Colors.blue),
+                        textScaleFactor: 1.0,
                       ),
                     )
                   ],
@@ -277,6 +278,7 @@ class _AddBlogState extends State<AddBlog> {
             "Add Blog",
             style: TextStyle(
                 color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            textScaleFactor: 1.0,
           )),
         ),
       ),
