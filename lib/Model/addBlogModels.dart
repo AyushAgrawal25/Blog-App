@@ -5,7 +5,7 @@ part 'addBlogModels.g.dart';
 @JsonSerializable()
 class AddBlogModel {
   String coverImage;
-  // int categoryId;
+  int categoryId;
   int count;
   int share;
   int comment;
@@ -19,7 +19,7 @@ class AddBlogModel {
       {this.coverImage,
       this.count,
       this.share,
-      // this.categoryId,
+      this.categoryId,
       this.comment,
       this.id,
       this.username,

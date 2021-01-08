@@ -6,7 +6,10 @@ import 'package:blogapp/NetworkHandler.dart';
 import 'package:flutter/material.dart';
 
 class Blogs extends StatefulWidget {
-  Blogs({Key key, this.url}) : super(key: key);
+  Blogs({
+    Key key,
+    this.url,
+  }) : super(key: key);
   final String url;
 
   @override

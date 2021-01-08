@@ -1,3 +1,4 @@
+import 'package:blogapp/Blog/BlogsCategories.dart';
 import 'package:blogapp/Model/addBlogModels.dart';
 import 'package:blogapp/NetworkHandler.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +61,7 @@ class Blog extends StatelessWidget {
                         child: Text(
                           addBlogModel.title,
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 17.5,
                             fontWeight: FontWeight.bold,
                           ),
                           textScaleFactor: 1.0,
@@ -116,6 +117,45 @@ class Blog extends StatelessWidget {
                           ],
                         ),
                       ),
+
+                      SizedBox(
+                        height: 5,
+                      ),
+                      // Category
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          blogCategories[addBlogModel.categoryId],
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textScaleFactor: 1.0,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+
+                      // User Name
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Posted by : " + addBlogModel.username,
+                          style: TextStyle(
+                            fontSize: 12.5,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textScaleFactor: 1.0,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+
+                      SizedBox(
+                        height: 5,
+                      ),
                     ],
                   ),
                 ),
@@ -123,7 +163,7 @@ class Blog extends StatelessWidget {
               Container(
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.symmetric(
-                  horizontal: 20,
+                  horizontal: 25,
                   vertical: 5,
                 ),
                 child: Text(

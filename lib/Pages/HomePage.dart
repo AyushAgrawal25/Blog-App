@@ -1,5 +1,8 @@
+import 'package:blogapp/Blog/Blogs.dart';
 import 'package:blogapp/Blog/addBlog.dart';
 import 'package:blogapp/BusinessLogic/AuthProvider.dart';
+import 'package:blogapp/Pages/LoaderPage.dart';
+import 'package:blogapp/Pages/LoadingPage.dart';
 import 'package:blogapp/Pages/WelcomePage.dart';
 import 'package:blogapp/Screen/HomeScreen.dart';
 import 'package:blogapp/Profile/ProfileScreen.dart';
@@ -15,9 +18,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int currentState = 0;
-  List<Widget> widgets = [HomeScreen(), ProfileScreen()];
-  List<String> titleString = ["Home Page", "Profile Page"];
   final storage = FlutterSecureStorage();
   NetworkHandler networkHandler = NetworkHandler();
   String username = "";
@@ -29,6 +29,8 @@ class _HomePageState extends State<HomePage> {
       borderRadius: BorderRadius.circular(50),
     ),
   );
+
+  bool isLoading = false;
 
   @override
   void initState() {
@@ -110,7 +112,7 @@ class _HomePageState extends State<HomePage> {
       ),
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: Text(titleString[currentState]),
+        title: Text("Home"),
         centerTitle: true,
         actions: <Widget>[
           IconButton(icon: Icon(Icons.notifications), onPressed: () {}),
@@ -141,17 +143,12 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                 IconButton(
                   icon: Icon(Icons.home),
-                  color: currentState == 0 ? Colors.white : Colors.white54,
-                  onPressed: () {
-                    setState(() {
-                      currentState = 0;
-                    });
-                  },
-                  iconSize: 40,
+                  color: Colors.white,
+                  onPressed: () {},
                 ),
                 IconButton(
                   icon: Icon(Icons.person),
-                  color: currentState == 1 ? Colors.white : Colors.white54,
+                  color: Colors.white54,
                   onPressed: () {
                     // setState(() {
                     //   currentState = 1;
@@ -169,12 +166,19 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: widgets[currentState],
+      backgroundColor: Color(0xffEEEEFF),
+      body: Container(
+        child: SingleChildScrollView(
+          child: Blogs(
+            url: "/blogpost/getOtherBlog",
+          ),
+        ),
+      ),
     );
   }
 
   void logout() async {
-    AuthProvider().googleSignOut();
+    await AuthProvider().googleSignOut();
     await storage.delete(key: "token");
     Navigator.pushAndRemoveUntil(
         context,

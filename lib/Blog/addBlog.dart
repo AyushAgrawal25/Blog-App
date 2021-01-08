@@ -7,6 +7,7 @@ import 'package:blogapp/Pages/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:blogapp/Blog/BlogsCategories.dart';
 
 class AddBlog extends StatefulWidget {
   AddBlog({Key key}) : super(key: key);
@@ -156,15 +157,7 @@ class _AddBlogState extends State<AddBlog> {
 
   Widget categoriesWidget() {
     // Add Validator to validate with this also.
-    List<String> categories = [
-      "Select Category",
-      "Coding",
-      "Politics",
-      "Development",
-      "Gaming",
-      "Bussiness",
-      "Internships"
-    ];
+    List<String> categories = blogCategories;
     List<DropdownMenuItem> categoryOptions = [];
 
     for (int i = 0; i < categories.length; i++) {
@@ -208,9 +201,12 @@ class _AddBlogState extends State<AddBlog> {
   Widget addButton() {
     return InkWell(
       onTap: () async {
-        if (_imageFile != null && _globalkey.currentState.validate()) {
-          AddBlogModel addBlogModel =
-              AddBlogModel(body: _body.text, title: _title.text);
+        if (_imageFile != null &&
+            _globalkey.currentState.validate() &&
+            _categoryId > 0) {
+          AddBlogModel addBlogModel = AddBlogModel(
+              body: _body.text, title: _title.text, categoryId: _categoryId);
+
           var response = await networkHandler.post1(
               "/blogpost/Add", addBlogModel.toJson());
           print(response.body);
