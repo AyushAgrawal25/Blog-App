@@ -39,6 +39,7 @@ class _GoogleLoginPageState extends State<GoogleLoginPage> {
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 child: Scaffold(
+                  backgroundColor: Colors.white,
                   body: Container(
                     width: MediaQuery.of(context).size.width,
                     child: Column(
@@ -55,35 +56,42 @@ class _GoogleLoginPageState extends State<GoogleLoginPage> {
                               children: [
                                 // Logo
                                 Container(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Container(
-                                          height: 10,
-                                          width: 120,
-                                          margin:
-                                              EdgeInsets.symmetric(vertical: 5),
-                                          color: Colors.deepPurple.shade600),
+                                  // child: Column(
+                                  //   mainAxisSize: MainAxisSize.min,
+                                  //   children: [
+                                  //     Container(
+                                  //         height: 10,
+                                  //         width: 120,
+                                  //         margin:
+                                  //             EdgeInsets.symmetric(vertical: 5),
+                                  //         color: Colors.deepPurple.shade600),
 
-                                      // Name
-                                      Container(
-                                        child: Text(
-                                          "Uped",
-                                          style: GoogleFonts.montserrat(
-                                              fontSize: 35,
-                                              letterSpacing: 1.0,
-                                              fontWeight: FontWeight.w400,
-                                              color: Colors.black),
-                                          textScaleFactor: 1.0,
-                                        ),
-                                      ),
-                                      Container(
-                                          height: 10,
-                                          width: 120,
-                                          margin:
-                                              EdgeInsets.symmetric(vertical: 5),
-                                          color: Colors.deepPurple.shade600),
-                                    ],
+                                  //     // Name
+                                  //     Container(
+                                  //       child: Text(
+                                  //         "Uped",
+                                  //         style: GoogleFonts.montserrat(
+                                  //             fontSize: 35,
+                                  //             letterSpacing: 1.0,
+                                  //             fontWeight: FontWeight.w400,
+                                  //             color: Colors.black),
+                                  //         textScaleFactor: 1.0,
+                                  //       ),
+                                  //     ),
+                                  //     Container(
+                                  //         height: 10,
+                                  //         width: 120,
+                                  //         margin:
+                                  //             EdgeInsets.symmetric(vertical: 5),
+                                  //         color: Colors.deepPurple.shade600),
+                                  //   ],
+                                  // ),
+
+                                  child: Image.asset(
+                                    "assets/appLogo.png",
+                                    height: 120,
+                                    width: 120,
+                                    fit: BoxFit.fitWidth,
                                   ),
                                 )
                               ],
