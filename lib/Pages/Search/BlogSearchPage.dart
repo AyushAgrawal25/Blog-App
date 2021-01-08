@@ -1,3 +1,4 @@
+import 'package:blogapp/AppTheme.dart';
 import 'package:blogapp/CustomWidget/BlogCard.dart';
 import 'package:blogapp/Model/SuperModel.dart';
 import 'package:blogapp/Model/addBlogModels.dart';
@@ -30,13 +31,16 @@ class _BlogSearchPageState extends State<BlogSearchPage> {
   String lastSearchedText = "";
   searchBlogs() async {
     if (searchTextController.text != lastSearchedText) {
-      nofAPICalls++;
-      var response = await widget.networkHandler.get("/blogpost/getOtherBlog");
+      setState(() {
+        nofAPICalls++;
+      });
+      var response = await widget.networkHandler.get(
+          "/blogpost/searchBlogs/${searchTextController.text.toLowerCase()}");
       superModel = SuperModel.fromJson(response);
       setState(() {
+        nofAPICalls--;
         searchedBlogs = superModel.data;
       });
-      nofAPICalls--;
       lastSearchedText = searchTextController.text;
     }
   }
@@ -100,7 +104,7 @@ class _BlogSearchPageState extends State<BlogSearchPage> {
                               width: 47.5,
                               height: 47.5,
                               decoration: BoxDecoration(
-                                  color: Colors.teal,
+                                  color: appPrimaryThemeColor,
                                   borderRadius: BorderRadius.circular(360)),
                               child: Icon(
                                 Icons.search,

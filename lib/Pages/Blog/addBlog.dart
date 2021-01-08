@@ -1,10 +1,13 @@
 import 'dart:convert';
 
+import 'package:blogapp/AppTheme.dart';
 import 'package:blogapp/CustomWidget/OverlayCard.dart';
 import 'package:blogapp/Model/addBlogModels.dart';
 import 'package:blogapp/NetworkHandler.dart';
 import 'package:blogapp/Pages/HomePage.dart';
+import 'package:blogapp/Pages/LoaderPage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:blogapp/Pages/Blog/BlogsCategories.dart';
@@ -25,55 +28,84 @@ class _AddBlogState extends State<AddBlog> {
   PickedFile _imageFile;
   IconData iconphoto = Icons.image;
   NetworkHandler networkHandler = NetworkHandler();
+
+  bool isLoading = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white54,
-        elevation: 0,
-        leading: IconButton(
-            icon: Icon(
-              Icons.clear,
-              color: Colors.black,
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarBrightness: Brightness.light,
+        statusBarIconBrightness: Brightness.dark));
+
+    SystemChrome.setEnabledSystemUIOverlays(
+        [SystemUiOverlay.bottom, SystemUiOverlay.top]);
+    return SafeArea(
+      top: false,
+      maintainBottomViewPadding: true,
+      child: Container(
+        child: Stack(
+          children: [
+            Container(
+              child: Scaffold(
+                appBar: AppBar(
+                  backgroundColor: Colors.white54,
+                  elevation: 0,
+                  leading: IconButton(
+                      icon: Icon(
+                        Icons.clear,
+                        color: Colors.black,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      }),
+                  actions: <Widget>[
+                    FlatButton(
+                      onPressed: () {
+                        if (_imageFile.path != null &&
+                            _globalkey.currentState.validate()) {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: ((builder) => OverlayCard(
+                                  imagefile: _imageFile,
+                                  title: _title.text,
+                                )),
+                          );
+                        }
+                      },
+                      child: Text(
+                        "Preview",
+                        style: TextStyle(fontSize: 18, color: Colors.blue),
+                      ),
+                    )
+                  ],
+                ),
+                body: Form(
+                  key: _globalkey,
+                  child: ListView(
+                    children: <Widget>[
+                      titleTextField(),
+                      bodyTextField(),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      categoriesWidget(),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      addButton(),
+                    ],
+                  ),
+                ),
+              ),
             ),
-            onPressed: () {
-              Navigator.pop(context);
-            }),
-        actions: <Widget>[
-          FlatButton(
-            onPressed: () {
-              if (_imageFile.path != null &&
-                  _globalkey.currentState.validate()) {
-                showModalBottomSheet(
-                  context: context,
-                  builder: ((builder) => OverlayCard(
-                        imagefile: _imageFile,
-                        title: _title.text,
-                      )),
-                );
-              }
-            },
-            child: Text(
-              "Preview",
-              style: TextStyle(fontSize: 18, color: Colors.blue),
-            ),
-          )
-        ],
-      ),
-      body: Form(
-        key: _globalkey,
-        child: ListView(
-          children: <Widget>[
-            titleTextField(),
-            bodyTextField(),
-            SizedBox(
-              height: 15,
-            ),
-            categoriesWidget(),
-            SizedBox(
-              height: 25,
-            ),
-            addButton(),
+            (isLoading)
+                ? Container(
+                    child: LoaderPage(),
+                  )
+                : Container(
+                    height: 0,
+                    width: 0,
+                  )
           ],
         ),
       ),
@@ -99,7 +131,7 @@ class _AddBlogState extends State<AddBlog> {
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.teal,
+              color: appPrimaryThemeColor,
             ),
           ),
           focusedBorder: OutlineInputBorder(
@@ -112,7 +144,7 @@ class _AddBlogState extends State<AddBlog> {
           prefixIcon: IconButton(
             icon: Icon(
               iconphoto,
-              color: Colors.teal,
+              color: appPrimaryThemeColor,
             ),
             onPressed: takeCoverPhoto,
           ),
@@ -139,7 +171,7 @@ class _AddBlogState extends State<AddBlog> {
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.teal,
+              color: appPrimaryThemeColor,
             ),
           ),
           focusedBorder: OutlineInputBorder(
@@ -204,6 +236,9 @@ class _AddBlogState extends State<AddBlog> {
         if (_imageFile != null &&
             _globalkey.currentState.validate() &&
             _categoryId > 0) {
+          setState(() {
+            isLoading = true;
+          });
           AddBlogModel addBlogModel = AddBlogModel(
               body: _body.text, title: _title.text, categoryId: _categoryId);
 
@@ -224,6 +259,10 @@ class _AddBlogState extends State<AddBlog> {
                   (route) => false);
             }
           }
+
+          setState(() {
+            isLoading = false;
+          });
         }
       },
       child: Center(
@@ -231,7 +270,8 @@ class _AddBlogState extends State<AddBlog> {
           height: 50,
           width: 200,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10), color: Colors.teal),
+              borderRadius: BorderRadius.circular(10),
+              color: appPrimaryThemeColor),
           child: Center(
               child: Text(
             "Add Blog",

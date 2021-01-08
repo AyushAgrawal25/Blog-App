@@ -1,10 +1,10 @@
 import 'package:blogapp/Pages/Blog/addBlog.dart';
+import 'package:blogapp/Pages/GoogleLoginPage.dart';
 import 'package:blogapp/Pages/HomePage.dart';
 import 'package:blogapp/Pages/Profile/MainProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'Pages/LoadingPage.dart';
-import 'Pages/WelcomePage.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 void main() {
@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
       });
     } else {
       setState(() {
-        page = WelcomePage();
+        page = GoogleLoginPage();
       });
     }
   }
@@ -42,6 +42,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: GoogleFonts.openSansTextTheme(
           Theme.of(context).textTheme,

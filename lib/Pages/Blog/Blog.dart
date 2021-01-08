@@ -71,55 +71,56 @@ class Blog extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 10),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.chat_bubble,
-                                size: 18,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                addBlogModel.comment.toString(),
-                                style: TextStyle(fontSize: 15),
-                              ),
-                              SizedBox(
-                                width: 15,
-                              ),
-                              Icon(
-                                Icons.thumb_up,
-                                size: 18,
-                              ),
-                              SizedBox(
-                                width: 8,
-                              ),
-                              Text(
-                                (addBlogModel.count == null)
-                                    ? "0"
-                                    : addBlogModel.count.toString(),
-                                style: TextStyle(fontSize: 15),
-                              ),
-                              SizedBox(
-                                width: 15,
-                              ),
-                              Icon(
-                                Icons.share,
-                                size: 18,
-                              ),
-                              SizedBox(
-                                width: 8,
-                              ),
-                              Text(
-                                addBlogModel.share.toString(),
-                                style: TextStyle(fontSize: 15),
-                              ),
-                            ],
-                          ),
-                        ),
+
+                        // Padding(
+                        //   padding: const EdgeInsets.symmetric(
+                        //       horizontal: 20, vertical: 10),
+                        //   child: Row(
+                        //     children: [
+                        //       Icon(
+                        //         Icons.chat_bubble,
+                        //         size: 18,
+                        //       ),
+                        //       SizedBox(
+                        //         width: 5,
+                        //       ),
+                        //       Text(
+                        //         addBlogModel.comment.toString(),
+                        //         style: TextStyle(fontSize: 15),
+                        //       ),
+                        //       SizedBox(
+                        //         width: 15,
+                        //       ),
+                        //       Icon(
+                        //         Icons.thumb_up,
+                        //         size: 18,
+                        //       ),
+                        //       SizedBox(
+                        //         width: 8,
+                        //       ),
+                        //       Text(
+                        //         (addBlogModel.count == null)
+                        //             ? "0"
+                        //             : addBlogModel.count.toString(),
+                        //         style: TextStyle(fontSize: 15),
+                        //       ),
+                        //       SizedBox(
+                        //         width: 15,
+                        //       ),
+                        //       Icon(
+                        //         Icons.share,
+                        //         size: 18,
+                        //       ),
+                        //       SizedBox(
+                        //         width: 8,
+                        //       ),
+                        //       Text(
+                        //         addBlogModel.share.toString(),
+                        //         style: TextStyle(fontSize: 15),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
 
                         SizedBox(
                           height: 5,

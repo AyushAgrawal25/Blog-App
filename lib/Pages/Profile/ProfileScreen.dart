@@ -1,3 +1,4 @@
+import 'package:blogapp/AppTheme.dart';
 import 'package:blogapp/NetworkHandler.dart';
 import 'package:blogapp/Pages/Profile/CreateProfile.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: appPrimaryThemeColor,
         title: Text("Your Profile"),
         centerTitle: true,
         actions: <Widget>[

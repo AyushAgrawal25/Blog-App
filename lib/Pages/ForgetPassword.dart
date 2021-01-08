@@ -1,8 +1,8 @@
 import 'dart:convert';
 
+import 'package:blogapp/Pages/GoogleLoginPage.dart';
 import 'package:blogapp/Pages/HomePage.dart';
 import 'package:blogapp/Pages/SignUpPage.dart';
-import 'package:blogapp/Pages/WelcomePage.dart';
 import "package:flutter/material.dart";
 
 import '../NetworkHandler.dart';
@@ -85,7 +85,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => WelcomePage()),
+                              builder: (context) => GoogleLoginPage()),
                           (route) => false);
                     }
 

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:blogapp/AppTheme.dart';
 import 'package:blogapp/NetworkHandler.dart';
 import 'package:blogapp/Pages/HomePage.dart';
 import 'package:flutter/material.dart';
@@ -99,7 +100,7 @@ class _CreateProfileState extends State<CreateProfile> {
                   width: 200,
                   height: 50,
                   decoration: BoxDecoration(
-                    color: Colors.teal,
+                    color: appPrimaryThemeColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
@@ -144,7 +145,7 @@ class _CreateProfileState extends State<CreateProfile> {
             },
             child: Icon(
               Icons.camera_alt,
-              color: Colors.teal,
+              color: appPrimaryThemeColor,
               size: 28.0,
             ),
           ),
@@ -213,7 +214,7 @@ class _CreateProfileState extends State<CreateProfile> {
       decoration: InputDecoration(
         border: OutlineInputBorder(
             borderSide: BorderSide(
-          color: Colors.teal,
+          color: appPrimaryThemeColor,
         )),
         focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
@@ -242,7 +243,7 @@ class _CreateProfileState extends State<CreateProfile> {
       decoration: InputDecoration(
         border: OutlineInputBorder(
             borderSide: BorderSide(
-          color: Colors.teal,
+          color: appPrimaryThemeColor,
         )),
         focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
@@ -271,7 +272,7 @@ class _CreateProfileState extends State<CreateProfile> {
       decoration: InputDecoration(
         border: OutlineInputBorder(
             borderSide: BorderSide(
-          color: Colors.teal,
+          color: appPrimaryThemeColor,
         )),
         focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
@@ -300,7 +301,7 @@ class _CreateProfileState extends State<CreateProfile> {
       decoration: InputDecoration(
         border: OutlineInputBorder(
             borderSide: BorderSide(
-          color: Colors.teal,
+          color: appPrimaryThemeColor,
         )),
         focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
@@ -330,7 +331,7 @@ class _CreateProfileState extends State<CreateProfile> {
       decoration: InputDecoration(
         border: OutlineInputBorder(
             borderSide: BorderSide(
-          color: Colors.teal,
+          color: appPrimaryThemeColor,
         )),
         focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(

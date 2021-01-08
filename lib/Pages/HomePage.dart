@@ -1,10 +1,11 @@
+import 'package:blogapp/AppTheme.dart';
 import 'package:blogapp/Pages/Blog/Blogs.dart';
 import 'package:blogapp/Pages/Blog/addBlog.dart';
 import 'package:blogapp/BusinessLogic/AuthProvider.dart';
+import 'package:blogapp/Pages/GoogleLoginPage.dart';
 import 'package:blogapp/Pages/LoaderPage.dart';
 import 'package:blogapp/Pages/LoadingPage.dart';
 import 'package:blogapp/Pages/Search/BlogSearchPage.dart';
-import 'package:blogapp/Pages/WelcomePage.dart';
 import 'package:blogapp/Pages/Profile/ProfileScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -82,37 +83,40 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            ListTile(
-              title: Text("All Post"),
-              trailing: Icon(Icons.launch),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text("New Story"),
-              trailing: Icon(Icons.add),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text("Settings"),
-              trailing: Icon(Icons.settings),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text("Feedback"),
-              trailing: Icon(Icons.feedback),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text("Logout"),
-              trailing: Icon(Icons.power_settings_new),
-              onTap: logout,
+            // ListTile(
+            //   title: Text("All Post"),
+            //   trailing: Icon(Icons.launch),
+            //   onTap: () {},
+            // ),
+            // ListTile(
+            //   title: Text("New Story"),
+            //   trailing: Icon(Icons.add),
+            //   onTap: () {},
+            // ),
+            // ListTile(
+            //   title: Text("Settings"),
+            //   trailing: Icon(Icons.settings),
+            //   onTap: () {},
+            // ),
+            // ListTile(
+            //   title: Text("Feedback"),
+            //   trailing: Icon(Icons.feedback),
+            //   onTap: () {},
+            // ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: ListTile(
+                title: Text("Logout"),
+                trailing: Icon(Icons.power_settings_new),
+                onTap: logout,
+              ),
             ),
           ],
         ),
       ),
       appBar: AppBar(
-        backgroundColor: Colors.teal,
-        title: Text("Home"),
+        backgroundColor: appPrimaryThemeColor,
+        title: Text("Uped"),
         centerTitle: true,
         actions: <Widget>[
           IconButton(
@@ -130,7 +134,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.teal,
+        backgroundColor: appPrimaryThemeColor,
         onPressed: () {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => AddBlog()));
@@ -141,23 +145,29 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.teal,
+        color: appPrimaryThemeColor,
         shape: CircularNotchedRectangle(),
         notchMargin: 12,
         child: Container(
-          height: 60,
+          height: 55,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 IconButton(
-                  icon: Icon(Icons.home),
+                  icon: Icon(
+                    Icons.home,
+                    size: 25,
+                  ),
                   color: Colors.white,
                   onPressed: () {},
                 ),
                 IconButton(
-                  icon: Icon(Icons.person),
+                  icon: Icon(
+                    Icons.person,
+                    size: 27.5,
+                  ),
                   color: Colors.white54,
                   onPressed: () {
                     // setState(() {
@@ -192,7 +202,7 @@ class _HomePageState extends State<HomePage> {
     await storage.delete(key: "token");
     Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (context) => WelcomePage()),
+        MaterialPageRoute(builder: (context) => GoogleLoginPage()),
         (route) => false);
   }
 }

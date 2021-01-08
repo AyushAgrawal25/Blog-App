@@ -17,6 +17,7 @@ class BlogCard extends StatelessWidget {
     return Container(
       height: 280,
       padding: EdgeInsets.symmetric(horizontal: 13, vertical: 8),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
       width: MediaQuery.of(context).size.width,
       child: Card(
         child: Stack(
