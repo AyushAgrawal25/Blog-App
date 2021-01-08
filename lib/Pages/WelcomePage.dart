@@ -77,7 +77,7 @@ class _WelcomePageState extends State<WelcomePage>
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
-        statusBarBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
         statusBarIconBrightness: Brightness.dark));
 
     SystemChrome.setEnabledSystemUIOverlays(

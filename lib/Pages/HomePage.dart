@@ -3,6 +3,7 @@ import 'package:blogapp/Pages/Blog/addBlog.dart';
 import 'package:blogapp/BusinessLogic/AuthProvider.dart';
 import 'package:blogapp/Pages/LoaderPage.dart';
 import 'package:blogapp/Pages/LoadingPage.dart';
+import 'package:blogapp/Pages/Search/BlogSearchPage.dart';
 import 'package:blogapp/Pages/WelcomePage.dart';
 import 'package:blogapp/Pages/Profile/ProfileScreen.dart';
 import 'package:flutter/material.dart';
@@ -114,7 +115,17 @@ class _HomePageState extends State<HomePage> {
         title: Text("Home"),
         centerTitle: true,
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.notifications), onPressed: () {}),
+          IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) {
+                    return BlogSearchPage(
+                      networkHandler: networkHandler,
+                    );
+                  },
+                ));
+              }),
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
