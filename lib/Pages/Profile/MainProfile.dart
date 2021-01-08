@@ -1,11 +1,11 @@
-import 'package:blogapp/Blog/Blogs.dart';
+import 'package:blogapp/Pages/Blog/Blogs.dart';
 import 'package:blogapp/Model/SuperModel.dart';
 import 'package:blogapp/Model/addBlogModels.dart';
 import 'package:blogapp/Model/profileModel.dart';
 import 'package:blogapp/NetworkHandler.dart';
 import 'package:flutter/material.dart';
 import 'package:blogapp/CustomWidget/BlogCard.dart';
-import 'package:blogapp/Blog/Blog.dart';
+import 'package:blogapp/Pages/Blog/Blog.dart';
 
 class MainProfile extends StatefulWidget {
   MainProfile({Key key}) : super(key: key);

@@ -1,6 +1,6 @@
-import 'package:blogapp/Blog/addBlog.dart';
+import 'package:blogapp/Pages/Blog/addBlog.dart';
 import 'package:blogapp/Pages/HomePage.dart';
-import 'package:blogapp/Profile/MainProfile.dart';
+import 'package:blogapp/Pages/Profile/MainProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'Pages/LoadingPage.dart';

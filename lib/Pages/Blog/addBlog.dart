@@ -7,7 +7,7 @@ import 'package:blogapp/Pages/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:blogapp/Blog/BlogsCategories.dart';
+import 'package:blogapp/Pages/Blog/BlogsCategories.dart';
 
 class AddBlog extends StatefulWidget {
   AddBlog({Key key}) : super(key: key);

@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:blogapp/NetworkHandler.dart';
 import 'package:blogapp/Pages/HomePage.dart';
-import 'package:blogapp/Screen/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 

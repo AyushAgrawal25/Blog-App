@@ -1,11 +1,10 @@
-import 'package:blogapp/Blog/Blogs.dart';
-import 'package:blogapp/Blog/addBlog.dart';
+import 'package:blogapp/Pages/Blog/Blogs.dart';
+import 'package:blogapp/Pages/Blog/addBlog.dart';
 import 'package:blogapp/BusinessLogic/AuthProvider.dart';
 import 'package:blogapp/Pages/LoaderPage.dart';
 import 'package:blogapp/Pages/LoadingPage.dart';
 import 'package:blogapp/Pages/WelcomePage.dart';
-import 'package:blogapp/Screen/HomeScreen.dart';
-import 'package:blogapp/Profile/ProfileScreen.dart';
+import 'package:blogapp/Pages/Profile/ProfileScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:blogapp/NetworkHandler.dart';

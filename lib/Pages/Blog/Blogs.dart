@@ -1,4 +1,4 @@
-import 'package:blogapp/Blog/Blog.dart';
+import 'package:blogapp/Pages/Blog/Blog.dart';
 import 'package:blogapp/CustomWidget/BlogCard.dart';
 import 'package:blogapp/Model/SuperModel.dart';
 import 'package:blogapp/Model/addBlogModels.dart';

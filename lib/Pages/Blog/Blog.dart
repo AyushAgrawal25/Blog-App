@@ -1,4 +1,4 @@
-import 'package:blogapp/Blog/BlogsCategories.dart';
+import 'package:blogapp/Pages/Blog/BlogsCategories.dart';
 import 'package:blogapp/Model/addBlogModels.dart';
 import 'package:blogapp/NetworkHandler.dart';
 import 'package:flutter/material.dart';

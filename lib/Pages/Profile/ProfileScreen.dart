@@ -1,5 +1,5 @@
 import 'package:blogapp/NetworkHandler.dart';
-import 'package:blogapp/Profile/CreateProfile.dart';
+import 'package:blogapp/Pages/Profile/CreateProfile.dart';
 import 'package:flutter/material.dart';
 
 import 'MainProfile.dart';
